@@ -1822,19 +1822,34 @@ footer {
         display: flex;
     }
     
-    /* Phone number at top of mobile menu */
+    /* Phone number at top of mobile menu - make it clickable */
     .nav-links::before {
-        content: "📞 010 125 0380";
-        display: block;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        padding: 0.8rem 1.5rem;
-        margin: 0 1rem 1rem 1rem;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-weight: 600;
-        text-align: center;
+        content: "";
+        display: none;
+    }
+    
+    /* Add clickable phone number as first item */
+    .nav-links li:first-child {
         order: -1;
+    }
+    
+    .nav-links .phone-link {
+        display: block !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: white !important;
+        padding: 0.8rem 1.5rem !important;
+        margin: 0 1rem 1rem 1rem !important;
+        border-radius: 8px !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        order: -1 !important;
+    }
+    
+    .nav-links .phone-link:hover {
+        background: rgba(255, 255, 255, 0.2) !important;
+        color: white !important;
     }
     
     .nav-links li {
@@ -1865,7 +1880,7 @@ footer {
         color: white !important;
         font-weight: 700 !important;
         font-size: 1rem !important;
-        margin: 0.5rem 1rem !important;
+        margin: 0.5rem 1rem 1rem 1rem !important;
         padding: 0.8rem 1rem !important;
         border-radius: 25px !important;
         text-align: center !important;
@@ -1873,7 +1888,7 @@ footer {
         letter-spacing: 1px !important;
         border: 2px solid rgba(255, 255, 255, 0.2) !important;
         box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4) !important;
-        order: 2;
+        order: 10;
     }
     
     .nav-links .client-link:hover {
@@ -1882,9 +1897,9 @@ footer {
         border-color: white !important;
     }
     
-    /* Hide phone link in mobile menu since we show it at top */
+    /* Show phone link at top of mobile menu */
     .nav-links .phone-link {
-        display: none;
+        display: block !important;
     }
     
     /* Ensure proper positioning */
