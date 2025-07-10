@@ -1,0 +1,9 @@
+This directory contains placeholder company logos.
+In a real implementation, you would add actual company logo images here:
+- company1.png
+- company2.png  
+- company3.png
+- company4.png
+- company5.png
+
+These should be professional company logos in PNG format, approximately 200x100 pixels.
