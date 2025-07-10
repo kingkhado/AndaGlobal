@@ -270,8 +270,8 @@ function initializeMobileMenu() {
             menuBtn.querySelector('i').classList.toggle('fa-bars', !isMenuOpen);
             menuBtn.querySelector('i').classList.toggle('fa-times', isMenuOpen);
             
-            // Prevent body scroll when menu is open
-            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+            // Don't prevent body scroll for compact menu
+            // document.body.style.overflow = isMenuOpen ? 'hidden' : '';
             
             // Update aria attributes
             menuBtn.setAttribute('aria-expanded', isMenuOpen);
@@ -314,7 +314,7 @@ function initializeMobileMenu() {
             }
         });
         
-        // Touch swipe to close menu
+        // Touch swipe to close menu (swipe up on compact menu)
         let touchStartY = 0;
         navLinks.addEventListener('touchstart', (e) => {
             touchStartY = e.touches[0].clientY;
@@ -326,8 +326,8 @@ function initializeMobileMenu() {
             const touchY = e.touches[0].clientY;
             const deltaY = touchY - touchStartY;
             
-            // Swipe up to close menu
-            if (deltaY < -50) {
+            // Swipe up to close compact menu
+            if (deltaY < -30) {
                 toggleMenu();
             }
         });

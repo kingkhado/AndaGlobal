@@ -1799,29 +1799,93 @@ footer {
         top: 70px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: auto;
+        max-height: 400px;
         background: #0047AB;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        padding-top: 2rem;
+        align-items: stretch;
+        padding: 1rem;
         z-index: 999;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
     
     .nav-links.active {
         left: 0;
     }
     
+    /* Phone number at top of mobile menu */
+    .nav-links::before {
+        content: "";
+        display: block;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        position: relative;
+    }
+    
+    .nav-links::after {
+        content: "📞 010 125 0380";
+        position: absolute;
+        top: 85px;
+        left: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 0.8rem;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+        z-index: 1000;
+    }
+    
     .nav-links li {
-        margin: 1rem 0;
+        margin: 0.3rem 0;
+        margin-top: 3rem;
+    }
+    
+    .nav-links li:first-child {
+        margin-top: 3rem;
     }
     
     .nav-links a {
-        font-size: 1.2rem;
-        padding: 1rem;
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
         display: block;
         width: 100%;
         text-align: center;
+        border-radius: 6px;
+    }
+    
+    .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Make "Become a Client" stand out in mobile */
+    .nav-links .client-link {
+        background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+        color: #0047AB !important;
+        font-weight: 800 !important;
+        font-size: 1.1rem !important;
+        margin: 1rem 0 !important;
+        padding: 1rem !important;
+        border: 3px solid white !important;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .nav-links .client-link:hover {
+        background: white !important;
+        color: #0047AB !important;
+        transform: none !important;
+    }
+    
+    /* Hide phone link in mobile menu since we show it at top */
+    .nav-links .phone-link {
+        display: none;
     }
 
     .hero-video {
