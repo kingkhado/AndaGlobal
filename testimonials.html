@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - AndaGlobal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">AG</div>
+                <span>AndaGlobal</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-transition>Home</a></li>
+                <li><a href="services.html" data-transition>Services</a></li>
+                <li><a href="projects.html" data-transition>Projects</a></li>
+                <li><a href="clients.html" data-transition>Clients</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                <li><a href="about.html" data-transition>About</a></li>
+                <li><a href="careers.html" data-transition>Careers</a></li>
+                <li><a href="contact.html" class="client-link" data-transition>Become a Client</a></li>
+                <li><a href="tel:+27101250380" class="phone-link"><i class="fas fa-phone"></i> 010 125 0380</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Client Testimonials</h1>
+            <p>Hear what our valued clients say about our work and commitment to excellence</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-image">
+                            <img src="assets/images/herman-mashaba.jpg" alt="Herman Mashaba">
+                        </div>
+                        <div class="testimonial-text">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <blockquote>
+                                "AndaGlobal has consistently delivered exceptional construction services for our municipal projects. Their commitment to quality, timely delivery, and professional excellence makes them our preferred construction partner. The team's attention to detail and innovative solutions have transformed our infrastructure development initiatives."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <h4>Herman Mashaba</h4>
+                                <p>Former Executive Mayor of Johannesburg</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-image">
+                            <img src="assets/images/" alt="Sipho Mosai">
+                        </div>
+                        <div class="testimonial-text">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <blockquote>
+                                "Working with AndaGlobal on our water infrastructure project was a game-changer. Their technical expertise and project management skills ensured we completed the Rand Water Canal Phase 2 ahead of schedule and within budget. Truly professional and reliable."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <h4>johdoe</h4>
+                                <p>Project Director, Rand Water</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+           
+
+            <!-- Slider Navigation -->
+            <div class="slider-navigation">
+                <button class="prev-btn" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+                <button class="next-btn" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="testimonial-stats">
+        <div class="container">
+            <h2>Client Satisfaction Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="stat-number">98%</div>
+                    <p>Client Satisfaction Rate</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="stat-number">150+</div>
+                    <p>Satisfied Clients</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <div class="stat-number">85%</div>
+                    <p>Repeat Business Rate</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number">22+</div>
+                    <p>Years of Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Join Our Satisfied Clients?</h2>
+            <p>Experience the AndaGlobal difference in construction excellence</p>
+            <a href="contact.html" class="cta-button" data-transition>Get Your Free Quote Today</a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Testimonials Slider - Use different variable names to avoid conflicts
+        let testimonialSlideIndex = 0;
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('.slider-dots .dot');
+
+        function showTestimonialSlide(index) {
+            // Hide all slides
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show current slide
+            if (testimonialSlides[index]) {
+                testimonialSlides[index].classList.add('active');
+            }
+            if (testimonialDots[index]) {
+                testimonialDots[index].classList.add('active');
+            }
+        }
+
+        function changeSlide(direction) {
+            testimonialSlideIndex += direction;
+            
+            if (testimonialSlideIndex >= testimonialSlides.length) {
+                testimonialSlideIndex = 0;
+            } else if (testimonialSlideIndex < 0) {
+                testimonialSlideIndex = testimonialSlides.length - 1;
+            }
+            
+            showTestimonialSlide(testimonialSlideIndex);
+        }
+
+        function currentSlide(index) {
+            testimonialSlideIndex = index - 1;
+            showTestimonialSlide(testimonialSlideIndex);
+        }
+
+        // Initialize the first slide
+        document.addEventListener('DOMContentLoaded', function() {
+            showTestimonialSlide(0);
+            
+            // Auto-play slider every 8 seconds
+            setInterval(() => {
+                changeSlide(1);
+            }, 8000);
+        });
+    </script>
+    <script src="assets/js/components/Footer.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - AndaGlobal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">AG</div>
+                <span>AndaGlobal</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-transition>Home</a></li>
+                <li><a href="services.html" data-transition>Services</a></li>
+                <li><a href="projects.html" data-transition>Projects</a></li>
+                <li><a href="clients.html" data-transition>Clients</a></li>
+                <li><a href="testimonials.html" data-transition>Testimonials</a></li>
+                <li><a href="about.html" data-transition>About</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="contact.html" class="client-link" data-transition>Become a Client</a></li>
+                <li><a href="tel:+27101250380" class="phone-link"><i class="fas fa-phone"></i> 010 125 0380</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Join Our Team</h1>
+            <p>Build your career with South Africa's leading construction company</p>
+        </div>
+    </section>
+
+    <!-- Why Work With Us Section -->
+    <section class="why-work-section">
+        <div class="container">
+            <h2>Why Choose AndaGlobal as Your Career Partner?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Career Growth</h3>
+                    <p>We invest in our people with continuous training, mentorship programs, and clear advancement pathways to help you reach your full potential.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Culture</h3>
+                    <p>Join a diverse, inclusive team where your ideas matter and collaboration drives innovation in every project we undertake.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Comprehensive Benefits</h3>
+                    <p>Enjoy competitive salaries, medical aid, pension fund, life insurance, and performance bonuses that recognize your contributions.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>Work in a safe environment with industry-leading safety protocols, training, and equipment to ensure your wellbeing on every project.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Skills Development</h3>
+                    <p>Access to training programs, certifications, and educational opportunities to enhance your skills and advance your career.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>Flexible working arrangements and supportive policies that help you maintain a healthy balance between work and personal life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Openings Section -->
+    <section class="openings-section">
+        <div class="container">
+            <h2>Current Job Openings</h2>
+            <div class="job-filters">
+                <button class="filter-btn active" data-filter="all">All Positions</button>
+                <button class="filter-btn" data-filter="engineering">Engineering</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+                <button class="filter-btn" data-filter="management">Management</button>
+                <button class="filter-btn" data-filter="administration">Administration</button>
+            </div>
+            
+            <div class="jobs-grid">
+                <div class="job-card" data-category="engineering">
+                    <div class="job-header">
+                        <h3>Senior Civil Engineer</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Johannesburg</span>
+                            <span><i class="fas fa-clock"></i> Posted 2 days ago</span>
+                        </div>
+                        <p>Lead infrastructure projects from design to completion. Requires 5+ years experience in civil engineering with expertise in water and road construction.</p>
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>Professional registration with ECSA</li>
+                                <li>5+ years project management experience</li>
+                                <li>Proficiency in AutoCAD and project management software</li>
+                            </ul>
+                        </div>
+                        <button class="apply-btn" onclick="openApplicationModal('Senior Civil Engineer')">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="job-card" data-category="construction">
+                    <div class="job-header">
+                        <h3>Construction Site Manager</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Pretoria</span>
+                            <span><i class="fas fa-clock"></i> Posted 1 week ago</span>
+                        </div>
+                        <p>Oversee daily construction operations, manage teams, and ensure project delivery on time and within budget. Strong leadership skills required.</p>
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Diploma in Construction Management</li>
+                                <li>3+ years site management experience</li>
+                                <li>Strong leadership and communication skills</li>
+                                <li>Knowledge of safety regulations and procedures</li>
+                            </ul>
+                        </div>
+                        <button class="apply-btn" onclick="openApplicationModal('Construction Site Manager')">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="job-card" data-category="engineering">
+                    <div class="job-header">
+                        <h3>Water Infrastructure Engineer</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Cape Town</span>
+                            <span><i class="fas fa-clock"></i> Posted 3 days ago</span>
+                        </div>
+                        <p>Design and implement water infrastructure projects including reservoirs, pipelines, and treatment facilities. Specialized expertise in hydraulic engineering required.</p>
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil/Water Engineering</li>
+                                <li>Experience with water infrastructure projects</li>
+                                <li>Knowledge of hydraulic modeling software</li>
+                                <li>Understanding of water quality standards</li>
+                            </ul>
+                        </div>
+                        <button class="apply-btn" onclick="openApplicationModal('Water Infrastructure Engineer')">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="job-card" data-category="management">
+                    <div class="job-header">
+                        <h3>Project Manager</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Durban</span>
+                            <span><i class="fas fa-clock"></i> Posted 5 days ago</span>
+                        </div>
+                        <p>Lead multi-million rand construction projects from initiation to completion. Coordinate with stakeholders, manage budgets, and ensure quality delivery.</p>
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Engineering/Construction Management</li>
+                                <li>PMP certification preferred</li>
+                                <li>7+ years project management experience</li>
+                                <li>Strong financial and risk management skills</li>
+                            </ul>
+                        </div>
+                        <button class="apply-btn" onclick="openApplicationModal('Project Manager')">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="job-card" data-category="construction">
+                    <div class="job-header">
+                        <h3>Quality Control Inspector</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Johannesburg</span>
+                            <span><i class="fas fa-clock"></i> Posted 1 week ago</span>
+                        </div>
+                        <p>Ensure construction quality standards are met through regular inspections, testing, and documentation. Attention to detail and technical knowledge essential.</p>
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Diploma in Civil Engineering/Construction</li>
+                                <li>2+ years quality control experience</li>
+                                <li>Knowledge of construction standards and codes</li>
+                                <li>Strong analytical and reporting skills</li>
+                            </ul>
+                        </div>
+                        <button class="apply-btn" onclick="openApplicationModal('Quality Control Inspector')">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="job-card" data-category="administration">
+                    <div class="job-header">
+                        <h3>Human Resources Coordinator</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-details">
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Johannesburg</span>
+                            <span><i class="fas fa-clock"></i> Posted 4 days ago</span>
+                        </div>
+                        <p>Support HR operations including recruitment, employee relations, training coordination, and policy implementation. Strong interpersonal skills required.</p>
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Human Resources/Business</li>
+                                <li>2+ years HR experience</li>
+                                <li>Knowledge of labor law and HR best practices</li>
+                                <li>Excellent communication and organizational skills</li>
+                            </ul>
+                        </div>
+                        <button class="apply-btn" onclick="openApplicationModal('Human Resources Coordinator')">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2>Our Application Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Submit Application</h3>
+                    <p>Complete our online application form with your CV and cover letter</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Initial Review</h3>
+                    <p>Our HR team reviews your application and qualifications</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Interview Process</h3>
+                    <p>Participate in interviews with our hiring managers and team leads</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Final Decision</h3>
+                    <p>Receive feedback and, if successful, join the AndaGlobal family</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="application-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeApplicationModal()">&times;</span>
+            <div class="modal-body">
+                <h2>Apply for <span id="jobTitle"></span></h2>
+                <form id="applicationForm" class="application-form" action="https://formspree.io/f/mqabvjlo" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Years of Relevant Experience *</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select experience level</option>
+                            <option value="0-1">0-1 years</option>
+                            <option value="2-3">2-3 years</option>
+                            <option value="4-5">4-5 years</option>
+                            <option value="6-10">6-10 years</option>
+                            <option value="10+">10+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education">Highest Education Level *</label>
+                        <select id="education" name="education" required>
+                            <option value="">Select education level</option>
+                            <option value="matric">Matric/Grade 12</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="bachelor">Bachelor's Degree</option>
+                            <option value="master">Master's Degree</option>
+                            <option value="phd">PhD/Doctorate</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="coverLetter">Cover Letter *</label>
+                        <textarea id="coverLetter" name="coverLetter" placeholder="Tell us why you're interested in this position and what makes you a great fit..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cv">Upload CV/Resume *</label>
+                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                        <small>Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="consent" required>
+                            I consent to AndaGlobal processing my personal information for recruitment purposes
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Don't See the Right Position?</h2>
+            <p>Send us your CV and we'll keep you in mind for future opportunities</p>
+            <a href="contact.html" class="cta-button" data-transition>Send Your CV</a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Job filtering functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const jobCards = document.querySelectorAll('.job-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                jobCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Application modal functionality
+        function openApplicationModal(jobTitle) {
+            document.getElementById('jobTitle').textContent = jobTitle;
+            document.getElementById('applicationModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeApplicationModal() {
+            document.getElementById('applicationModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('applicationModal');
+            if (e.target === modal) {
+                closeApplicationModal();
+            }
+        });
+
+        // Form submission
+        document.getElementById('applicationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your application! We will review it and get back to you within 5 business days.');
+            closeApplicationModal();
+        });
+        
+    </script>
+    <script src="assets/js/components/Footer.js"></script>
+    <script src="assets/js/components/Footer.js"></script>
+</body>
+</html>
+
