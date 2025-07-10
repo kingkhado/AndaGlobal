@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Test - AndaGlobal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Force mobile view for testing */
+        body {
+            max-width: 375px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            min-height: 100vh;
+        }
+        
+        /* Force mobile menu to show */
+        .mobile-menu-btn {
+            display: block !important;
+        }
+        
+        .nav-links {
+            display: none !important;
+        }
+        
+        .nav-links.active {
+            display: flex !important;
+        }
+        
+        /* Test indicator */
+        .test-info {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: #ff0000;
+            color: white;
+            padding: 5px;
+            font-size: 12px;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">MOBILE TEST MODE</div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">AG</div>
+                <span>AndaGlobal</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html" class="client-link">Become a Client</a></li>
+                <li><a href="tel:+27101250380" class="phone-link"><i class="fas fa-phone"></i> 010 125 0380</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Test Content -->
+    <div style="margin-top: 100px; padding: 20px;">
+        <h1>Mobile Dropdown Test</h1>
+        <p>This page is designed to test the mobile dropdown menu functionality.</p>
+        
+        <h2>Test Checklist:</h2>
+        <ul>
+            <li>✓ Hamburger menu button visible</li>
+            <li>□ Click hamburger to open dropdown</li>
+            <li>□ Phone number "📞 010 125 0380" at top</li>
+            <li>□ All pages listed (Home, Services, Projects, Clients, Testimonials, About, Careers)</li>
+            <li>□ "Become a Client" button fits screen</li>
+            <li>□ Blue theme (not orange)</li>
+            <li>□ All links clickable</li>
+            <li>□ Click outside to close menu</li>
+        </ul>
+        
+        <h2>Expected Mobile Menu Items:</h2>
+        <ol>
+            <li>📞 010 125 0380 (at top)</li>
+            <li>Home</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>Clients</li>
+            <li>Testimonials</li>
+            <li>About</li>
+            <li>Careers</li>
+            <li>Become a Client (blue button)</li>
+        </ol>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/components/Footer.js"></script>
+</body>
+</html>

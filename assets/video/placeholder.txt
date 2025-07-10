@@ -1,0 +1,9 @@
+This directory should contain video files for the hero section:
+- hero.mp4 (main hero video)
+- poster.jpg (video poster image)
+
+For a real implementation, you would add:
+1. A professional construction/engineering video (hero.mp4)
+2. A high-quality poster image (poster.jpg) that shows while the video loads
+
+The video should be optimized for web (H.264 codec, reasonable file size).
