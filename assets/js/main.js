@@ -248,87 +248,78 @@ function initializeMobileMenu() {
     return new Promise((resolve) => {
         const nav = document.querySelector('nav');
         const navContainer = nav.querySelector('.container');
+        const originalNavLinks = nav.querySelector('.nav-links');
         
-        // Create mobile menu button with enhanced touch area
-        let menuBtn = nav.querySelector('.mobile-menu-btn');
-        if (!menuBtn) {
-            menuBtn = document.createElement('button');
-            menuBtn.className = 'mobile-menu-btn';
-            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            menuBtn.setAttribute('aria-label', 'Toggle mobile menu');
-            menuBtn.style.padding = '15px'; // Larger touch target
-            navContainer.appendChild(menuBtn);
+        // Create mobile menu button
+        let mobileMenuBtn = nav.querySelector('.mobile-menu-btn');
+        if (!mobileMenuBtn) {
+            mobileMenuBtn = document.createElement('button');
+            mobileMenuBtn.className = 'mobile-menu-btn';
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            navContainer.appendChild(mobileMenuBtn);
         }
         
-        const navLinks = nav.querySelector('.nav-links');
+        // Create mobile menu
+        let mobileNavLinks = nav.querySelector('.mobile-nav-links');
+        if (!mobileNavLinks) {
+            mobileNavLinks = document.createElement('ul');
+            mobileNavLinks.className = 'mobile-nav-links';
+            
+            // Add phone number with call icon at top
+            const phoneItem = document.createElement('li');
+            phoneItem.innerHTML = '<a href="tel:+27101250380" class="mobile-phone-link"><i class="fas fa-phone"></i> 010 125 0380</a>';
+            mobileNavLinks.appendChild(phoneItem);
+            
+            // Add menu items (Services instead of Testimonials)
+            const menuItems = [
+                { text: 'Home', href: 'index.html' },
+                { text: 'Services', href: 'services.html' },
+                { text: 'Projects', href: 'projects.html' },
+                { text: 'Become a Client', href: 'contact.html', class: 'mobile-client-link' }
+            ];
+            
+            menuItems.forEach(item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = item.href;
+                a.textContent = item.text;
+                if (item.class) {
+                    a.className = item.class;
+                }
+                li.appendChild(a);
+                mobileNavLinks.appendChild(li);
+            });
+            
+            // Insert mobile menu after original nav
+            originalNavLinks.parentNode.insertBefore(mobileNavLinks, originalNavLinks.nextSibling);
+        }
+        
+        // Mobile menu toggle functionality
         let isMenuOpen = false;
         
-        // Toggle menu function
-        function toggleMenu() {
+        mobileMenuBtn.addEventListener('click', function() {
             isMenuOpen = !isMenuOpen;
-            navLinks.classList.toggle('active', isMenuOpen);
-            menuBtn.querySelector('i').classList.toggle('fa-bars', !isMenuOpen);
-            menuBtn.querySelector('i').classList.toggle('fa-times', isMenuOpen);
-            
-            // Don't prevent body scroll for compact menu
-            // document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-            
-            // Update aria attributes
-            menuBtn.setAttribute('aria-expanded', isMenuOpen);
-            navLinks.setAttribute('aria-hidden', !isMenuOpen);
-        }
-        
-        // Menu button click handler
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
+            mobileNavLinks.classList.toggle('active', isMenuOpen);
+            mobileMenuBtn.innerHTML = isMenuOpen 
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
         });
         
-        // Close menu when clicking nav links
-        navLinks.addEventListener('click', (e) => {
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && isMenuOpen) {
+                isMenuOpen = false;
+                mobileNavLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Handle mobile menu link clicks
+        mobileNavLinks.addEventListener('click', function(e) {
             if (e.target.tagName === 'A') {
-                if (isMenuOpen) {
-                    toggleMenu();
-                }
-            }
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (isMenuOpen && !nav.contains(e.target)) {
-                toggleMenu();
-            }
-        });
-        
-        // Close menu on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && isMenuOpen) {
-                toggleMenu();
-            }
-        });
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768 && isMenuOpen) {
-                toggleMenu();
-            }
-        });
-        
-        // Touch swipe to close menu (swipe up on compact menu)
-        let touchStartY = 0;
-        navLinks.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-        });
-        
-        navLinks.addEventListener('touchmove', (e) => {
-            if (!isMenuOpen) return;
-            
-            const touchY = e.touches[0].clientY;
-            const deltaY = touchY - touchStartY;
-            
-            // Swipe up to close compact menu
-            if (deltaY < -30) {
-                toggleMenu();
+                isMenuOpen = false;
+                mobileNavLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
         

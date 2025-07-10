@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Dropdown Test - AndaGlobal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Force mobile view for testing */
+        body {
+            max-width: 375px;
+            margin: 0 auto;
+            background: #f0f0f0;
+        }
+        
+        /* Override desktop styles to force mobile menu */
+        .nav-links {
+            display: none !important;
+        }
+        
+        .mobile-menu-btn {
+            display: block !important;
+        }
+        
+        /* Test indicator */
+        .test-info {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 10001;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">Mobile Test Mode - 375px width</div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">AG</div>
+                <span>AndaGlobal</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html" class="client-link">Become a Client</a></li>
+                <li><a href="tel:+27101250380" class="phone-link"><i class="fas fa-phone"></i> 010 125 0380</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Test Content -->
+    <div style="margin-top: 100px; padding: 20px;">
+        <h1>Mobile Dropdown Test</h1>
+        <p>This page tests the mobile dropdown menu functionality.</p>
+        
+        <h2>Test Instructions:</h2>
+        <ol>
+            <li>Click the hamburger menu button (☰) in the top navigation</li>
+            <li>Verify the dropdown shows: Phone number, Home, Testimonials, Projects, Become a Client</li>
+            <li>Test that the phone number is clickable</li>
+            <li>Test that all menu links work correctly</li>
+            <li>Test that the "Become a Client" button stands out</li>
+        </ol>
+        
+        <h2>Expected Mobile Menu Items:</h2>
+        <ul>
+            <li>📞 010 125 0380 (clickable phone number)</li>
+            <li>Home</li>
+            <li>Testimonials</li>
+            <li>Projects</li>
+            <li>Become a Client (highlighted button)</li>
+        </ul>
+    </div>
+
+    <!-- Simplified Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('nav');
+            const navContainer = nav.querySelector('.container');
+            const originalNavLinks = nav.querySelector('.nav-links');
+            
+            // Create mobile menu button
+            const mobileMenuBtn = document.createElement('button');
+            mobileMenuBtn.className = 'mobile-menu-btn';
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            navContainer.appendChild(mobileMenuBtn);
+            
+            // Create simplified mobile menu
+            const mobileNavLinks = document.createElement('ul');
+            mobileNavLinks.className = 'mobile-nav-links';
+            
+            // Add phone number with call icon at top
+            const phoneItem = document.createElement('li');
+            phoneItem.innerHTML = '<a href="tel:+27101250380" class="mobile-phone-link"><i class="fas fa-phone"></i> 010 125 0380</a>';
+            mobileNavLinks.appendChild(phoneItem);
+            
+            // Add simplified menu items as requested by user
+            const menuItems = [
+                { text: 'Home', href: 'index.html' },
+                { text: 'Testimonials', href: 'testimonials.html' },
+                { text: 'Projects', href: 'projects.html' },
+                { text: 'Become a Client', href: 'contact.html', class: 'mobile-client-link' }
+            ];
+            
+            menuItems.forEach(item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = item.href;
+                a.textContent = item.text;
+                if (item.class) {
+                    a.className = item.class;
+                }
+                li.appendChild(a);
+                mobileNavLinks.appendChild(li);
+            });
+            
+            // Insert mobile menu after original nav
+            originalNavLinks.parentNode.insertBefore(mobileNavLinks, originalNavLinks.nextSibling);
+            
+            // Mobile menu toggle functionality
+            let isMenuOpen = false;
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                isMenuOpen = !isMenuOpen;
+                mobileNavLinks.classList.toggle('active', isMenuOpen);
+                mobileMenuBtn.innerHTML = isMenuOpen 
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!nav.contains(e.target) && isMenuOpen) {
+                    isMenuOpen = false;
+                    mobileNavLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            
+            // Handle mobile menu link clicks
+            mobileNavLinks.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    isMenuOpen = false;
+                    mobileNavLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

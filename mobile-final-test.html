@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AndaGlobal - Mobile Test Final</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Force mobile view for testing */
+        body {
+            max-width: 375px;
+            margin: 0 auto;
+            background: #f0f0f0;
+        }
+        
+        /* Override desktop styles to force mobile menu */
+        .nav-links {
+            display: none !important;
+        }
+        
+        .mobile-menu-btn {
+            display: block !important;
+        }
+        
+        /* Test indicator */
+        .test-info {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 10001;
+        }
+        
+        /* Simplified content for testing */
+        .hero-video {
+            height: 50vh;
+            margin-bottom: 2rem;
+        }
+        
+        .services {
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">Mobile Final Test - 375px width</div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">AG</div>
+                <span>AndaGlobal</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html" class="client-link">Become a Client</a></li>
+                <li><a href="tel:+27101250380" class="phone-link"><i class="fas fa-phone"></i> 010 125 0380</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-video hero-gradient">
+        <div class="video-overlay no-background">
+            <div class="hero-content">
+                <h1>Building Tomorrow's Infrastructure Today</h1>
+                <p>Excellence in Construction & Engineering Solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Commercial Construction</h3>
+                    <p>State-of-the-art commercial and industrial facilities</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-road"></i>
+                    <h3>Infrastructure Development</h3>
+                    <p>Roads, bridges, and critical infrastructure projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Content -->
+    <div style="padding: 20px; background: white; margin: 20px;">
+        <h2>Mobile Dropdown Test Results</h2>
+        <p><strong>✅ Expected Mobile Menu Items:</strong></p>
+        <ul>
+            <li>📞 010 125 0380 (clickable phone number)</li>
+            <li>Home</li>
+            <li>Services (instead of Testimonials)</li>
+            <li>Projects</li>
+            <li>Become a Client (highlighted button)</li>
+        </ul>
+        
+        <p><strong>Test Instructions:</strong></p>
+        <ol>
+            <li>Click the hamburger menu button (☰) in the top navigation</li>
+            <li>Verify the dropdown shows the correct items in order</li>
+            <li>Test that the phone number is clickable</li>
+            <li>Test that "Become a Client" button stands out</li>
+            <li>Test that all menu links work correctly</li>
+        </ol>
+    </div>
+
+    <!-- Use the updated main.js with working mobile menu -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
