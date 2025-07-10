@@ -297,12 +297,33 @@ function initializeMobileMenu() {
         // Mobile menu toggle functionality
         let isMenuOpen = false;
         
-        mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             isMenuOpen = !isMenuOpen;
-            mobileNavLinks.classList.toggle('active', isMenuOpen);
-            mobileMenuBtn.innerHTML = isMenuOpen 
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
+            
+            if (isMenuOpen) {
+                mobileNavLinks.classList.add('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileNavLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Improve touch responsiveness
+        mobileMenuBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileNavLinks.classList.add('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileNavLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
         });
         
         // Close mobile menu when clicking outside
