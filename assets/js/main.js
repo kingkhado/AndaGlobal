@@ -109,7 +109,7 @@ function initializeScrollProgress() {
         const scrollTop = window.pageYOffset;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (scrollTop / docHeight) * 100;
-        progressBar.style.width = `${scrollPercent}%`;
+        progressBar.style.height = `${scrollPercent}%`;
     });
 }
 
