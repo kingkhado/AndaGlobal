@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AndaGlobal - Mobile Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Force mobile view for testing */
+        body {
+            max-width: 400px !important;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+        
+        /* Force mobile menu to show */
+        .mobile-menu-btn {
+            display: block !important;
+        }
+        
+        .nav-links {
+            display: none !important;
+        }
+        
+        .nav-links.active {
+            display: flex !important;
+        }
+        
+        /* Simulate mobile viewport */
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: block !important;
+            }
+            
+            .nav-links {
+                position: fixed !important;
+                top: 70px !important;
+                left: -100% !important;
+                width: 100% !important;
+                height: auto !important;
+                max-height: 400px !important;
+                background: #0047AB !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important;
+                align-items: stretch !important;
+                padding: 1rem !important;
+                z-index: 999 !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+            }
+            
+            .nav-links.active {
+                left: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">AG</div>
+                <span>AndaGlobal</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html" data-transition>Services</a></li>
+                <li><a href="projects.html" data-transition>Projects</a></li>
+                <li><a href="clients.html" data-transition>Clients</a></li>
+                <li><a href="testimonials.html" data-transition>Testimonials</a></li>
+                <li><a href="about.html" data-transition>About</a></li>
+                <li><a href="careers.html" data-transition>Careers</a></li>
+                <li><a href="contact.html" class="client-link" data-transition>Become a Client</a></li>
+                <li><a href="tel:+27101250380" class="phone-link"><i class="fas fa-phone"></i> 010 125 0380</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Test Content -->
+    <div style="margin-top: 100px; padding: 20px; text-align: center;">
+        <h1>Mobile Menu Test</h1>
+        <p>This page is designed to test the mobile dropdown menu functionality.</p>
+        <p>Click the hamburger menu button to test the mobile dropdown.</p>
+        
+        <div style="margin: 20px 0; padding: 20px; background: #f0f0f0; border-radius: 8px;">
+            <h3>Expected Mobile Menu Features:</h3>
+            <ul style="text-align: left; max-width: 300px; margin: 0 auto;">
+                <li>📞 Phone number at top: "📞 010 125 0380"</li>
+                <li>📏 Compact height (max 400px)</li>
+                <li>🌟 "Become a Client" in gold styling</li>
+                <li>🚫 No animations</li>
+                <li>📱 Touch-friendly interface</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
