@@ -43,6 +43,7 @@ class Footer {
                         <div class="footer-section">
                             <h3>Company</h3>
                             <ul>
+                                <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About</a></li>
                                 <li><a href="projects.html">Projects</a></li>
                                 <li><a href="clients.html">Clients</a></li>

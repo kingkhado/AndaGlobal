@@ -860,14 +860,6 @@ function initializeAccessibility() {
     });
 }
 
-// Load Footer Component
-function loadFooter() {
-    const script = document.createElement('script');
-    script.src = 'assets/js/components/Footer.js';
-    script.async = true;
-    document.head.appendChild(script);
-}
-
 // Initialize all enhancements
 document.addEventListener('DOMContentLoaded', () => {
     initializeFormValidation();
@@ -875,5 +867,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeTouchSupport();
     initializePerformanceOptimizations();
     initializeAccessibility();
-    loadFooter();
 });
