@@ -23,8 +23,8 @@ class Footer {
                                 <a href="#" aria-label="LinkedIn">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#" aria-label="Instagram">
-                                    <i class="fab fa-instagram"></i>
+                                <a href="https://www.youtube.com/@AndaGlobal" target="_blank" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
                                 </a>
                             </div>
                         </div>
