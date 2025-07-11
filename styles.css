@@ -242,6 +242,7 @@ nav .container {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .video-overlay.no-background {
@@ -348,7 +349,21 @@ nav .container {
     height: 100%;
     object-fit: cover;
     z-index: 0; /* behind everything */
-    pointer-events: none; /* prevents video from intercepting clicks */
+    pointer-events: auto; /* allow video interaction */
+    border: none; /* Remove iframe border */
+}
+
+/* Ensure iframe covers the full area like a video */
+.background-video iframe,
+iframe.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 0;
+    pointer-events: auto; /* allow video interaction */
 }
 
 
