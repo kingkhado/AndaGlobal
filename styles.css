@@ -250,6 +250,13 @@ nav .container {
     align-items: center;
     justify-content: center;
     transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Allow clicks to pass through overlay */
+}
+
+.background-video,
+.background-video iframe,
+iframe.background-video {
+    pointer-events: auto !important; /* Enable interaction with iframe */
 }
 
 .video-overlay.no-background {
