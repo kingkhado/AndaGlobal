@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -94,6 +94,7 @@
     <button class="scroll-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
+    
     <!-- Loading Screen -->
     <div class="loading-screen">
         <div class="loading-content">
@@ -127,31 +128,29 @@
         </div>
     </nav>
 
-  <!-- Hero Section -->
-<section class="hero-video hero-gradient">
-    <iframe id="hero-video" 
-            class="background-video" 
-            src="https://www.youtube.com/embed/5A7I0RdlVak?autoplay=1&mute=1&loop=1&playlist=5A7I0RdlVak&controls=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1&fs=1&cc_load_policy=0&disablekb=0&origin=https://andaglobal.co.za" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media; fullscreen; accelerometer; gyroscope; picture-in-picture" 
-            allowfullscreen
-            webkitallowfullscreen
-            mozallowfullscreen
-            title="AndaGlobal Construction Video">
-    </iframe>
-=======
+    <!-- Hero Section -->
+    <section class="hero-video hero-gradient">
+        <iframe id="hero-video" 
+                class="background-video" 
+                src="https://www.youtube.com/embed/5A7I0RdlVak?autoplay=1&mute=1&loop=1&playlist=5A7I0RdlVak&controls=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1&fs=1&cc_load_policy=0&disablekb=0&origin=https://andaglobal.co.za" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media; fullscreen; accelerometer; gyroscope; picture-in-picture" 
+                allowfullscreen
+                webkitallowfullscreen
+                mozallowfullscreen
+                title="AndaGlobal Construction Video">
+        </iframe>
 
-    <div class="video-overlay no-background">
-        <div class="hero-content">
-            <h1>Building Tomorrow's Infrastructure Today</h1>
-            <p>Excellence in Construction & Engineering Solutions</p>
-            <div class="video-container">
-                <!-- Play button removed as per user request -->
+        <div class="video-overlay no-background">
+            <div class="hero-content">
+                <h1>Building Tomorrow's Infrastructure Today</h1>
+                <p>Excellence in Construction & Engineering Solutions</p>
+                <div class="video-container">
+                    <!-- Play button removed as per user request -->
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Services Preview -->
     <section id="services" class="services">
@@ -344,36 +343,70 @@
         </div>
     </section>
 
-
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/components/Footer.js"></script>
     
     <!-- YouTube API and Video Control Script -->
     <script>
-        // Load YouTube IFrame API
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        // Global variables
+        let player;
+        let overlay;
+        let isAPIReady = false;
 
-        var player;
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            overlay = document.querySelector('.video-overlay');
+            
+            // Check if mobile and hide overlay immediately
+            const isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (isMobile) {
+                if (overlay) overlay.style.opacity = '0';
+                return;
+            }
+
+            // Load YouTube API
+            if (!window.YT) {
+                const tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                const firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            } else {
+                onYouTubeIframeAPIReady();
+            }
+
+            // Fallback: Hide overlay initially since video autoplays
+            if (overlay) overlay.style.opacity = '0';
+        });
+
+        // YouTube API ready callback
         function onYouTubeIframeAPIReady() {
-            player = new YT.Player('hero-video', {
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
+            isAPIReady = true;
+            try {
+                player = new YT.Player('hero-video', {
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            } catch (error) {
+                console.log('YouTube API error:', error);
+                // Fallback behavior
+                setupFallbackBehavior();
+            }
         }
 
         function onPlayerReady(event) {
+            console.log('YouTube player ready');
             // Initially hide the overlay text since video autoplays
-            document.querySelector('.video-overlay').style.opacity = '0';
+            if (overlay) {
+                overlay.style.opacity = '0';
+            }
         }
 
         function onPlayerStateChange(event) {
-            const overlay = document.querySelector('.video-overlay');
+            if (!overlay) return;
+            
             const isMobile = window.matchMedia("(max-width: 768px)").matches;
             
             if (isMobile) {
@@ -381,18 +414,50 @@
                 overlay.style.opacity = '0';
                 return;
             }
+
+            console.log('Player state changed:', event.data);
             
-            if (event.data == YT.PlayerState.PLAYING) {
+            if (event.data === YT.PlayerState.PLAYING) {
                 // Video is playing - hide overlay text
                 overlay.style.opacity = '0';
-            } else if (event.data == YT.PlayerState.PAUSED) {
+                console.log('Video playing - hiding overlay');
+            } else if (event.data === YT.PlayerState.PAUSED) {
                 // Video is paused - show overlay text
                 overlay.style.opacity = '1';
-            } else if (event.data == YT.PlayerState.ENDED) {
+                console.log('Video paused - showing overlay');
+            } else if (event.data === YT.PlayerState.ENDED) {
                 // Video ended - show overlay text
                 overlay.style.opacity = '1';
+                console.log('Video ended - showing overlay');
             }
         }
+
+        // Fallback behavior if YouTube API fails
+        function setupFallbackBehavior() {
+            console.log('Setting up fallback behavior');
+            const iframe = document.getElementById('hero-video');
+            if (iframe && overlay) {
+                // Hide overlay by default since video autoplays
+                overlay.style.opacity = '0';
+                
+                // Add click listener to toggle overlay
+                iframe.addEventListener('click', function() {
+                    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+                    if (!isMobile) {
+                        // Toggle overlay visibility
+                        overlay.style.opacity = overlay.style.opacity === '0' ? '1' : '0';
+                    }
+                });
+            }
+        }
+
+        // Handle window resize to check mobile state
+        window.addEventListener('resize', function() {
+            const isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (isMobile && overlay) {
+                overlay.style.opacity = '0';
+            }
+        });
     </script>
 </body>
 </html>

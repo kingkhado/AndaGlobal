@@ -253,13 +253,6 @@ nav .container {
     pointer-events: none; /* Allow clicks to pass through overlay */
 }
 
-/* Hide hero text on mobile devices */
-@media (max-width: 768px) {
-    .video-overlay {
-        display: none !important;
-    }
-}
-
 .background-video,
 .background-video iframe,
 iframe.background-video {
