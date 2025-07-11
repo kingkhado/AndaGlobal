@@ -36,7 +36,7 @@ class Footer {
                                 <li><a href="services.html">Road Construction</a></li>
                                 <li><a href="services.html">Building Construction</a></li>
                                 <li><a href="services.html">Project Management</a></li>
-                                <li><a href="services.html">Consulting</a></li>
+                                <li><a href="services.html">Sewer infrastucture</a></li>
                             </ul>
                         </div>
                         

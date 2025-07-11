@@ -381,6 +381,9 @@
             } else if (event.data == YT.PlayerState.PAUSED) {
                 // Video is paused - show overlay text
                 overlay.style.opacity = '1';
+            } else if (event.data == YT.PlayerState.ENDED) {
+                // Video ended - show overlay text
+                overlay.style.opacity = '1';
             }
         }
     </script>
