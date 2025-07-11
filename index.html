@@ -374,6 +374,13 @@
 
         function onPlayerStateChange(event) {
             const overlay = document.querySelector('.video-overlay');
+            const isMobile = window.matchMedia("(max-width: 768px)").matches;
+            
+            if (isMobile) {
+                // On mobile, always hide the overlay text
+                overlay.style.opacity = '0';
+                return;
+            }
             
             if (event.data == YT.PlayerState.PLAYING) {
                 // Video is playing - hide overlay text
