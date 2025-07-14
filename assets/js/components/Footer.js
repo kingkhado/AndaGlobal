@@ -17,7 +17,7 @@ class Footer {
                             <h3>AndaGlobal</h3>
                             <p>Building South Africa's future through innovative construction and infrastructure solutions. Excellence in every project, integrity in every partnership.</p>
                             <div class="social-links">
-                                <a href="https://wa.me/27111234567" target="_blank" aria-label="WhatsApp">
+                                <a href="https://wa.me/270730672639" target="_blank" aria-label="WhatsApp">
                                     <i class="fab fa-whatsapp"></i>
                                 </a>
                                 <a href="#" aria-label="LinkedIn">
